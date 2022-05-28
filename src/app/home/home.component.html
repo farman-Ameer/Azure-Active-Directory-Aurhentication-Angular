@@ -1,0 +1,25 @@
+<div>
+    <h2>Azure Active Directory Authentication</h2>
+    <table>
+        <tr>
+            <td> User Status: </td>
+            <td> {{loginDisplay ? 'Logged In': 'Logged Out'}}</td>
+        </tr>
+        <tr>
+            <td> Name: </td>
+            <td> {{objResponse?.account?.name}}</td>
+        </tr>
+        <tr>
+            <td> Email: </td>
+            <td> {{objResponse?.account?.username}} </td>
+        </tr>
+        <tr>
+            <td> Access Token: </td>
+            <td>{{objResponse?.accessToken}}</td>
+        </tr>
+    </table>
+</div>
+
+
+<input type="button" *ngIf='!loginDisplay' value="Login" (click)="login()" />
+<input type="button" *ngIf='loginDisplay' value="Logout" (click)="logout()" />
